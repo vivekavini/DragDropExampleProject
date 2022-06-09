@@ -1,0 +1,29 @@
+
+<div  style="margin:auto; width: 35% ;border: 4px solid green;padding: 10;justify-content: center;">
+<select [(ngModel)]="Albumselected" (ngModelChange)="onselected($event)"]>
+  <option *ngFor='let album of listAlbums' [value]="album.id">
+{{album.title}}
+  </option>
+</select>
+</div>
+<br>
+<h1>Selected Album:{{Albumselected}}</h1>
+<br>
+<hr>
+<table>
+
+<th>
+  <tr>albumId</tr>
+  <tr>Id</tr>
+  <tr>title </tr>
+  <tr>url</tr>
+  <tr>thumbnailUrl</tr>
+</th>
+<tr *ngFor="let photo of list listPhoto">
+  <td>{{photo.albumId}}</td>
+  <td>{{photo.Id}}</td>
+  <td>{{photo.title}}</td>
+  <td>{{photo.url}}</td>
+  <td><img src="{{photo.thumbnailUrl}}"></td>
+</tr>
+</table>
